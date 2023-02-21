@@ -28,3 +28,26 @@ body {
 	border: 1px solid;
 	padding: 2rem;
 }
+
+.notes {
+	padding-inline-start: 0;
+	list-style: none;
+}
+
+.note {
+	padding: 1rem;
+	border: 1px solid;
+	cursor: pointer;
+	margin: 5px 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+.selected-note {
+	background: navajowhite;
+}
+
+.sidebar-title {
+	display: flex;
+	justify-content: space-between;
+}
