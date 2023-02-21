@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: "Karl", sans-serif;
+	max-width: 128rem;
+	margin: 0 auto;
+	/* border: 1px solid; */
+	padding: 1rem;
+}
+
+.App {
+	height: 100vh;
+	display: grid;
+	grid-template: auto / 30% 70%;
+	grid-gap: 1rem;
+}
+
+.sidebar,
+.editor {
+	border: 1px solid;
+	padding: 2rem;
+}
