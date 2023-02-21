@@ -7,3 +7,7 @@
     -   [x] Highlight Selected Note
     -   [x] Lift the state UP
     -   [x] Props - Refactor
+-   Editor
+    -   [ ] Connect with Sidebar
+    -   [ ] Update on New Text
+    -   [ ] Make First Sentence as Title

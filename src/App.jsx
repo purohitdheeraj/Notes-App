@@ -14,11 +14,12 @@ function App() {
 	const addNote = () => {
 		let noteObj = {
 			id: nanoid(),
-			body: "Start Writing here",
+			body: "",
 			title: `New Note ${notes.length + 1}`,
 		};
 
 		setNotes((oldNotes) => [noteObj, ...oldNotes]);
+		setCurrentNoteId(noteObj.id);
 	};
 
 	const deleteNote = (id) => {
@@ -36,8 +37,18 @@ function App() {
 				(note) => note.id === currentNoteId
 			) || notes[0];
 
-		console.log(currentNote);
+		// console.log(currentNote);
 		return currentNote;
+	};
+
+	const updateNote = (bodyText) => {
+		setNotes((oldNotes) => {
+			return oldNotes.map((note) => {
+				return note.id === currentNoteId
+					? { ...note, body: bodyText }
+					: note;
+			});
+		});
 	};
 
 	return (
@@ -49,7 +60,11 @@ function App() {
 				currentNote={getCurrentNote()}
 				setCurrentNoteId={setCurrentNoteId}
 			/>
-			<Editor />
+			<Editor
+				notes={notes}
+				currentNote={getCurrentNote()}
+				updateNote={updateNote}
+			/>
 		</div>
 	);
 }
