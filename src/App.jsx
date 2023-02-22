@@ -54,8 +54,6 @@ function App() {
 
 	const updateNote = (bodyText) => {
 		setNotes((oldNotes) => {
-			// update the note data
-			// keep the updated note on top of arr
 			const newArr = [];
 			for (let i = 0; i < oldNotes.length; i++) {
 				let note = oldNotes[i];

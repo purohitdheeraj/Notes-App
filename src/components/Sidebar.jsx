@@ -11,7 +11,7 @@ function Sidebar(props) {
 
 	const noteElements =
 		notes &&
-		notes.map((note, index) => {
+		notes.map((note) => {
 			let isSelected = currentNote.id === note.id;
 			return (
 				<li
