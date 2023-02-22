@@ -24,6 +24,10 @@ body {
 	padding: 2rem;
 }
 
+.sidebar{
+	overflow-y: auto;
+}
+
 .notes {
 	padding-inline-start: 0;
 	list-style: none;
