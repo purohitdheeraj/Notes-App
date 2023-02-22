@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
+import Split from "react-split";
 
 function App() {
 	const [notes, setNotes] = useState([]);
@@ -30,7 +31,8 @@ function App() {
 		});
 	};
 
-	// helper
+	// helper - for existing notes Arr
+	// if not present then undefined
 	const getCurrentNote = () => {
 		let currentNote =
 			notes.find(
@@ -45,7 +47,13 @@ function App() {
 		setNotes((oldNotes) => {
 			return oldNotes.map((note) => {
 				return note.id === currentNoteId
-					? { ...note, body: bodyText }
+					? {
+							...note,
+							body: bodyText,
+							title:
+								bodyText.split("\n")[0] ||
+								note.title,
+					  }
 					: note;
 			});
 		});
@@ -53,18 +61,24 @@ function App() {
 
 	return (
 		<div className="App">
-			<Sidebar
-				notes={notes}
-				addNote={addNote}
-				deleteNote={deleteNote}
-				currentNote={getCurrentNote()}
-				setCurrentNoteId={setCurrentNoteId}
-			/>
-			<Editor
-				notes={notes}
-				currentNote={getCurrentNote()}
-				updateNote={updateNote}
-			/>
+			<Split
+				sizes={[40, 60]}
+				direction="horizontal"
+				className="split"
+			>
+				<Sidebar
+					notes={notes}
+					addNote={addNote}
+					deleteNote={deleteNote}
+					currentNote={getCurrentNote()}
+					setCurrentNoteId={setCurrentNoteId}
+				/>
+				<Editor
+					notes={notes}
+					currentNote={getCurrentNote()}
+					updateNote={updateNote}
+				/>
+			</Split>
 		</div>
 	);
 }

@@ -10,17 +10,12 @@ html {
 body {
 	font-size: 1.6rem;
 	font-family: "Karl", sans-serif;
-	max-width: 128rem;
-	margin: 0 auto;
-	/* border: 1px solid; */
-	padding: 1rem;
 }
 
 .App {
+	max-width: 128rem;
+	margin: 0 auto;
 	height: 100vh;
-	display: grid;
-	grid-template: auto / 30% 70%;
-	grid-gap: 1rem;
 }
 
 .sidebar,
@@ -50,4 +45,25 @@ body {
 .sidebar-title {
 	display: flex;
 	justify-content: space-between;
+}
+
+.split {
+	display: flex;
+	flex-direction: row;
+	height: inherit;
+}
+
+.gutter {
+	background-color: #eee;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	height: 50%;
+	margin: auto 0 ;
+	outline: 1px solid;
+	border-radius: 5px ;
+}
+
+.gutter.gutter-horizontal {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+	cursor: col-resize;
 }

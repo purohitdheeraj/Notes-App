@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import MDEditor from "@uiw/react-md-editor";
 import rehypeSanitize from "rehype-sanitize";
 
 function Editor(props) {
 	const { notes, currentNote, updateNote } = props;
-
-	// const [value, setValue] = useState("");
 
 	return (
 		<main className="editor">
@@ -17,7 +15,7 @@ function Editor(props) {
 					previewOptions={{
 						rehypePlugins: [[rehypeSanitize]],
 					}}
-					height="90vh"
+					height="100%"
 				/>
 			) : (
 				<div>

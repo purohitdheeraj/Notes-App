@@ -1,5 +1,10 @@
 ## Notes App
 
+-   App
+
+    -   [x] Split Pane
+    -   [ ]
+
 -   SideBar
     -   [x] Add a note
     -   [x] Get Current Note
@@ -8,6 +13,6 @@
     -   [x] Lift the state UP
     -   [x] Props - Refactor
 -   Editor
-    -   [ ] Connect with Sidebar
-    -   [ ] Update on New Text
-    -   [ ] Make First Sentence as Title
+    -   [x] Connect with Sidebar (make the textbox controlled component)
+    -   [x] Update on New Text (pass update func)
+    -   [x] Make First Sentence as Title
