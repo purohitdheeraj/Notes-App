@@ -25,7 +25,7 @@ function App() {
 	const addNote = () => {
 		let noteObj = {
 			id: nanoid(),
-			body: "",
+			body: "## Your Notes Title Here",
 			title: `New Note ${notes.length + 1}`,
 		};
 
@@ -54,17 +54,20 @@ function App() {
 
 	const updateNote = (bodyText) => {
 		setNotes((oldNotes) => {
-			return oldNotes.map((note) => {
-				return note.id === currentNoteId
-					? {
+			// update the note data
+			// keep the updated note on top of arr
+			const newArr = [];
+			for (let i = 0; i < oldNotes.length; i++) {
+				let note = oldNotes[i];
+
+				note.id === currentNoteId
+					? newArr.unshift({
 							...note,
 							body: bodyText,
-							title:
-								bodyText.split("\n")[0] ||
-								note.title,
-					  }
-					: note;
-			});
+					  })
+					: newArr.push(note);
+			}
+			return newArr;
 		});
 	};
 

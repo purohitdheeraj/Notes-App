@@ -11,7 +11,7 @@ function Sidebar(props) {
 
 	const noteElements =
 		notes &&
-		notes.map((note) => {
+		notes.map((note, index) => {
 			let isSelected = currentNote.id === note.id;
 			return (
 				<li
@@ -23,7 +23,8 @@ function Sidebar(props) {
 						setCurrentNoteId(note.id)
 					}
 				>
-					{note.title}
+					{note.body.split("\n")[0] ||
+						"Note Title here"}
 					<span
 						className="note-delete"
 						onClick={() => deleteNote(note.id)}

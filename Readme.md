@@ -13,7 +13,7 @@
     -   [x] Highlight Selected Note
     -   [x] Lift the state UP
     -   [x] Props - Refactor
-    -   [ ] Modified note to the top
+    -   [x] Modified note to the top
 -   Editor
     -   [x] Connect with Sidebar (make the textbox controlled component)
     -   [x] Update on New Text (pass update func)
